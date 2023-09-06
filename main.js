@@ -11,8 +11,6 @@ const client = new Client({
     ]
 });
 
-client.login(config.token);
-
 client.commands = new Collection();
 const commandsDirectory = fs.readdirSync("./commands").filter(file => file.endsWith('.js'));
 for(file of commandsDirectory) {
@@ -20,6 +18,8 @@ for(file of commandsDirectory) {
     const command = require(`./commands/${commandName}`);
     client.commands.set(commandName, command);
 }
+
+client.login(config.token);
 
 client.on("ready", () => {
     console.log("Discord bot " + client.user.tag + " ready");

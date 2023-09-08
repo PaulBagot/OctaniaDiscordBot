@@ -5,12 +5,13 @@ exports.run = (client, message, args) => {
     let helpEmbed = new EmbedBuilder();
     helpEmbed.addFields(
         {name: 'ping', value: 'repond "pong !"'},
-        {name: 'clear', value: 'efface le nombre de messages spécifier'}
+        {name: 'clear', value: 'efface le nombre de messages spécifier'},
+        {name: 'say', value: 'répète ce que vous voulez lui faire dire'}
     );
     helpEmbed.setColor(0x8DCEF4);
     helpEmbed.setTitle("Liste des commandes");
     helpEmbed.setTimestamp();
-    helpEmbed.setAuthor({name: 'Bclrr'});
+    helpEmbed.setAuthor({name: 'Auteur : bclrr'});
     
     message.channel.send({embeds : [helpEmbed]});
 }

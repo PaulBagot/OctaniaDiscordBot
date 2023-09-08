@@ -1,4 +1,4 @@
-const {Client, GatewayIntentBits, Collection } = require("discord.js");
+const {Client, GatewayIntentBits, Collection, ActivityType, Emoji } = require("discord.js");
 const config = require('./config.json');
 const fs = require("fs");
 const client = new Client({
@@ -22,6 +22,11 @@ for(file of commandsDirectory) {
 client.login(config.token);
 
 client.on("ready", () => {
+    client.user.setStatus('idle');
+    client.user.setActivity({
+        name: config.prefix +'help',
+        type: ActivityType.Watching
+    });
     console.log("Discord bot " + client.user.tag + " ready");
 });
 

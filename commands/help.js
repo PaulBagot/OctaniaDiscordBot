@@ -6,7 +6,9 @@ exports.run = (client, message, args) => {
     helpEmbed.addFields(
         {name: 'ping', value: 'repond "pong !"'},
         {name: 'clear', value: 'efface le nombre de messages spécifier'},
-        {name: 'say', value: 'répète ce que vous voulez lui faire dire'}
+        {name: 'say', value: 'répète ce que vous voulez lui faire dire'},
+        {name: 'play', value: 'joue un son choisi'},
+        {name: 'leave', value: 'déconnecte le bot du salon vocal'}
     );
     helpEmbed.setColor(0x8DCEF4);
     helpEmbed.setTitle("Liste des commandes");

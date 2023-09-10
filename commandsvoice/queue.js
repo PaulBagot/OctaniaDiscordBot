@@ -6,8 +6,10 @@ exports.run = (client, message, args) => {
         if(queue.songs[1] != null) {
             let embed = new EmbedBuilder();
             let string = '';
+            let number = 1;
             for(i in queue.songs) {
-                string += i + 1 + `: \`${queue.songs[i].name}\`\n`;
+                string += number + `: \`${queue.songs[i].name}\`\n`;
+                number++;
             }
             embed.setDescription(string);
             embed.setFooter(

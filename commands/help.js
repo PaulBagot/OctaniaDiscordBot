@@ -8,6 +8,7 @@ exports.run = (client, message, args) => {
         {name: 'say', value: 'répète ce que vous voulez lui faire dire'},
         {name: 'play', value: 'ajoute un son choisi à la queue'},
         {name: 'skip', value: 'passe au son suivant si il y en a un'},
+        {name: 'remove', value: 'enleve un son de la queue'},
         {name: 'queue', value: 'affiche la queue de son'},
         {name: 'leave', value: 'déconnecte le bot du salon vocal'}
     );

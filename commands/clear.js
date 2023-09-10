@@ -6,9 +6,12 @@ exports.run = (client, message, args) => {
             let messageNumber = Number.parseInt(args[0]);
             if(Number.isInteger(messageNumber)){
                 message.channel.bulkDelete(messageNumber, true);
-                message.channel.send("je fait ça !").then(msg => msg.delete(1000));
-            } else
-                error = true;
+                message.channel.send("j'ai supprimé \`" + messageNumber + '\` message(s)');
+                setTimeout(() => {
+                    message.channel.bulkDelete(1, true);
+                }, 2000);
+                return;
+            }
         }catch(e) {
             error = true;
         }

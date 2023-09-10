@@ -72,3 +72,7 @@ client.on("messageCreate", message => {
         command.run(client, message, args);
     }
 });
+
+//events for voice channels
+client.distube.on("addSong", (queue, song) => require('./eventsvoice/addSong.js')(queue, song));
+client.distube.on("playSong", (queue, song) => require('./eventsvoice/playSong.js')(queue, song));

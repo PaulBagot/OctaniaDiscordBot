@@ -7,6 +7,7 @@ exports.run = (client, message, args) => {
         {name: 'clear', value: 'efface le nombre de messages spécifier'},
         {name: 'say', value: 'répète ce que vous voulez lui faire dire'},
         {name: 'play', value: 'ajoute un son choisi à la queue'},
+        {name: 'skip', value: 'passe au son suivant si il y en a un'},
         {name: 'leave', value: 'déconnecte le bot du salon vocal'}
     );
     helpEmbed.setColor(0x8DCEF4);

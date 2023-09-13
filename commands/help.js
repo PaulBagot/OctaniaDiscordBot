@@ -10,7 +10,10 @@ exports.run = (client, message, args) => {
         {name: 'skip', value: 'passe au son suivant si il y en a un'},
         {name: 'remove', value: 'enleve un son de la queue'},
         {name: 'queue', value: 'affiche la queue de son'},
+        {name: 'loop', value: 'joue en boucle le son (ou arrête)'},
+        {name: 'playing', value: 'affiche le son qui est en train d\'être joué'},
         {name: 'leave', value: 'déconnecte le bot du salon vocal'}
+
     );
     helpEmbed.setColor(0x8DCEF4);
     helpEmbed.setTitle("Liste des commandes");

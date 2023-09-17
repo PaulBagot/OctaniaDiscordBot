@@ -8,6 +8,7 @@ const config = require('./config.json');
 const fs = require("fs");
 const { DisTube } = require('distube');
 const { SpotifyPlugin } = require('@distube/spotify');
+const guildMemberAdd = require("./events/guildMemberAdd.js");
 
 const client = new Client({
     intents : [
@@ -72,6 +73,14 @@ client.on("messageCreate", message => {
         command.run(client, message, args);
     }
 });
+
+client.on("guildMemberAdd", member => {
+    require('./events/guildMemberAdd.js')(member)
+})
+
+client.on("guildMemberRemove", member => {
+    require('./events/guildMemberRemove.js')(member)
+})
 
 //events for voice channels
 client.distube.on("addSong", (queue, song) => require('./eventsvoice/addSong.js')(queue, song));

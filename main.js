@@ -9,6 +9,26 @@ const fs = require("fs");
 const { DisTube } = require('distube');
 const { SpotifyPlugin } = require('@distube/spotify');
 const guildMemberAdd = require("./events/guildMemberAdd.js");
+const { MongoClient, ServerApiVersion } = require('mongodb');
+
+const uri = "mongodb+srv://bclr:"+config.mongoPassword+"@discordbot.meb5twa.mongodb.net/?retryWrites=true&w=majority";
+const mongoClient = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+async function run() {
+  try {
+    await mongoClient.connect();
+    await mongoClient.db("admin").command({ ping: 1 }); 
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    await mongoClient.close();
+  }
+}
 
 const client = new Client({
     intents : [
@@ -51,6 +71,7 @@ client.on("ready", () => {
         name: config.prefix +'help',
         type: ActivityType.Watching
     });
+    run().catch(console.dir);
     console.log("Discord bot " + client.user.tag + " ready");
 });
 
@@ -75,11 +96,11 @@ client.on("messageCreate", message => {
 });
 
 client.on("guildMemberAdd", member => {
-    require('./events/guildMemberAdd.js')(member)
+    require('./events/guildMemberAdd.js')(member, mongoClient)
 })
 
 client.on("guildMemberRemove", member => {
-    require('./events/guildMemberRemove.js')(member)
+    require('./events/guildMemberRemove.js')(member, mongoClient)
 })
 
 //events for voice channels

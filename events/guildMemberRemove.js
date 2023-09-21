@@ -1,6 +1,3 @@
-const config = require('../config.json');
-const mongoClient = require("mongodb")
-
 module.exports = (member, mongoClient) => {
     async function run() {
         let channel;

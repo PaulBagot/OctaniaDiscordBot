@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
     if(queue == null) return 
     if(queue.songs[index] == null) return
     if(index <= 0) {
-        message.channel.reply(`le son en train d'être joué ne peux pas être passé`)
+        message.reply(`le son en train d'être joué ne peux pas être passé`)
         return
     }
 

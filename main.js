@@ -8,7 +8,6 @@ const config = require('./config.json');
 const fs = require("fs");
 const { DisTube } = require('distube');
 const { SpotifyPlugin } = require('@distube/spotify');
-const guildMemberAdd = require("./events/guildMemberAdd.js");
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const uri = "mongodb+srv://bclr:"+config.mongoPassword+"@discordbot.meb5twa.mongodb.net/?retryWrites=true&w=majority";
@@ -104,5 +103,5 @@ client.on("guildMemberRemove", member => {
 })
 
 //events for voice channels
-client.distube.on("addSong", (queue, song) => require('./eventsvoice/addSong.js')(queue, song));
-client.distube.on("playSong", (queue, song) => require('./eventsvoice/playSong.js')(queue, song));
+client.distube.on("addSong", (queue, song) => require('./eventsvoice/addSong.js')(queue, song))
+client.distube.on("playSong", (queue, song) => require('./eventsvoice/playSong.js')(queue, song))

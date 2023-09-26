@@ -32,6 +32,4 @@ module.exports = (member, mongoClient) => {
         }
     }
     run().catch(console.dir);
-
-    
 }

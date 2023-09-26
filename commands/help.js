@@ -22,6 +22,7 @@ exports.run = (client, message, args) => {
     helpEmbed.setAuthor({name: 'Auteur : bclrr'});
     
     message.channel.send({embeds : [helpEmbed]});
+    message.delete()
 }
 
 exports.name = "help";

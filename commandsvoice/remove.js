@@ -8,7 +8,10 @@ exports.run = (client, message, args) => {
     if(!Number.isInteger(index)) return
     if(queue == null) return 
     if(queue.songs[index] == null) return
-    if(index <= 0) return
+    if(index <= 0) {
+        message.channel.reply(`le son en train d'être joué ne peux pas être passé`)
+        return
+    }
 
     message.channel.send(`:white_check_mark:  | \`${queue.songs[index].name}\` a été enlevé`)
     message.delete()

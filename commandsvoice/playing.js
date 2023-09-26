@@ -25,7 +25,7 @@ exports.run = (client, message, args) => {
             .addFields(
                 {name: 'Durée', value: `\`${song.formattedDuration}\``, inline: true},
                 {name: 'Actuelle', value: `\`${minutesDisplay}:${secondesDisplay}\``, inline: true},
-                {name: 'Position', value: '`0`', inline: true},
+                {name: 'Position', value: '`1`', inline: true},
                 {name: 'Demandeur', value: `\`${song.user.tag}\``, inline: true},
                 {name: 'Lien', value: `[click](${song.url})`, inline: true},
                 {name: 'Boucle', value: `\`${loopModeDisplay}\``, inline: true}

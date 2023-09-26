@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
         message.channel.send(`:repeat_one:  | le son \`${queue.songs[0].name}\` est maintenant joué en boucle`)
         queue.repeatMode = 1;
     } else {
-        message.channel.send('les sons ne sont plus joué en boucle')
+        message.channel.send(":arrow_forward:  | le son n'est plus joué en boucle")
         queue.repeatMode = 0;
     }
     message.delete();

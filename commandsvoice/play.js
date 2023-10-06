@@ -13,25 +13,15 @@ exports.run = (client, message, args) => {
 
     async function searchSong() {
         try {
-            let song = await client.distube.search(Args, {safeSearch : true});
-
-            client.distube.play(song, tab[0], {
+            client.distube.play(Args, tab[0], {
                 member: message.member,
                 position: 0,
                 textChannel: message.channel,
             });
             message.delete();
         } catch(err) {
-            try {
-                client.distube.play(Args, tab[0], {
-                    member: message.member,
-                    position: 0,
-                    textChannel: message.channel,
-                });
-                message.delete();
-            } catch(err) {
-                message.channel.send("aucun son trouvé");
-            }
+            message.channel.send("aucun son trouvé");
+        }
         }
     }
     searchSong()

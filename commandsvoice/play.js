@@ -22,7 +22,6 @@ exports.run = (client, message, args) => {
         } catch(err) {
             message.channel.send("aucun son trouvé");
         }
-        }
     }
     searchSong()
 }

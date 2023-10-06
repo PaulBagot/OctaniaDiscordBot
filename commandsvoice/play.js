@@ -23,7 +23,7 @@ exports.run = (client, message, args) => {
             message.delete();
         } catch(err) {
             try {
-                client.distube.play(voiceChannel, Args, {
+                let song = await client.distube.play(voiceChannel, Args, {
                     member: message.member,
                     position: 0,
                     textChannel: message.channel,

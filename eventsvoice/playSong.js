@@ -14,4 +14,8 @@ module.exports = (queue, song) => {
             .setFooter({text: 'demandé par ' + song.user.tag})
             .setTimestamp()
     ]})
+    console.log("▶️ Playing: " + song.name);
+    console.log("🔗 URL: " + song.url);
+    console.log("📂 Source: " + song.source);
+    console.log("--------------------------------------------------------------------");
 }
